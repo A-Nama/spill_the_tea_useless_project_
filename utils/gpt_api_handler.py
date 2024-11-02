@@ -1,7 +1,7 @@
 import openai
+import os
 
-# Ensure you set your OpenAI API key as an environment variable or configure it securely
-openai.api_key = "your-openai-api-key"
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 def dramatize_text(text, drama_level):
     prompt = f"Make the following story more dramatic based on the level {drama_level}:\n{text}"
