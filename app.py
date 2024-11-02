@@ -1,8 +1,6 @@
 import streamlit as st
-
 from pages import spill_tea
 from pages import get_tea
-
 
 def main():
     st.set_page_config(page_title="Spill the Tea", page_icon="☕", layout="centered")
@@ -22,11 +20,11 @@ def main():
     
     if st.button("Spill the Tea"):
         st.session_state.page = "spill_tea"  # Save the page in session state
-        st.experimental_rerun()  # Rerun to update the view
+        st.rerun()  # Rerun to update the view
 
     if st.button("Get Some Tea"):
         st.session_state.page = "get_tea"  # Save the page in session state
-        st.experimental_rerun()  # Rerun to update the view
+        st.rerun()  # Rerun to update the view
 
     # Display the corresponding page
     if 'page' in st.session_state:

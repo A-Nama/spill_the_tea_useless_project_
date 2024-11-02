@@ -5,14 +5,6 @@ def main():
     st.title("Get Some Tea ☕")
     st.write("Browse the latest drama-filled stories!")
 
-<<<<<<< HEAD
-    # Categorization of stories
-    categories = ["work", "love", "friends", "family", "other"]
-    selected_category = st.selectbox("Choose a category to browse:", categories)
-
-    search_query = st.text_input("Search by tags", placeholder="e.g., work, love")
-    stories = get_tea_from_db(search_query or selected_category)  # Default to category if no search
-=======
     # Background image style
     st.markdown(
         """
@@ -22,7 +14,6 @@ def main():
         </style>
         """, unsafe_allow_html=True
     )
->>>>>>> origin/main
 
     # Define the tea categories and corresponding images
     tea_categories = {
