@@ -5,8 +5,12 @@ def main():
     st.title("Get Some Tea ☕")
     st.write("Browse the latest drama-filled stories!")
 
+    # Categorization of stories
+    categories = ["work", "love", "friends", "family", "other"]
+    selected_category = st.selectbox("Choose a category to browse:", categories)
+
     search_query = st.text_input("Search by tags", placeholder="e.g., work, love")
-    stories = get_tea_from_db(search_query)
+    stories = get_tea_from_db(search_query or selected_category)  # Default to category if no search
 
     if stories:
         for story in stories:

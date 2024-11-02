@@ -1,12 +1,12 @@
 import streamlit as st
-import openai
 
-# Set your OpenAI API key
-openai.api_key = "your_openai_api_key"  # Replace with your actual API key
+from pages import spill_tea
+from pages import get_tea
+
 
 def main():
     st.set_page_config(page_title="Spill the Tea", page_icon="☕", layout="centered")
-    
+
     # Background image style
     st.markdown(
         """
@@ -16,17 +16,28 @@ def main():
         </style>
         """, unsafe_allow_html=True
     )
-    
+
     st.title("☕ Spill the Tea ☕")
     st.markdown("Choose an option below:")
     
-    # Use st.query_params() to set parameters
     if st.button("Spill the Tea"):
-        st.query_params(page="spill_tea")
-        
-    if st.button("Get Some Tea"):
-        st.query_params(page="get_tea")
+        st.session_state.page = "spill_tea"  # Save the page in session state
+        st.experimental_rerun()  # Rerun to update the view
 
+    if st.button("Get Some Tea"):
+        st.session_state.page = "get_tea"  # Save the page in session state
+        st.experimental_rerun()  # Rerun to update the view
+
+    # Display the corresponding page
+    if 'page' in st.session_state:
+        if st.session_state.page == "spill_tea":
+            import spill_tea  # Import the spill tea page
+            spill_tea.main()
+        elif st.session_state.page == "get_tea":
+            import get_tea  # Import the get tea page
+            get_tea.main()
+    else:
+        st.session_state.page = None  # Reset page if it doesn't exist
 
 if __name__ == "__main__":
     main()
