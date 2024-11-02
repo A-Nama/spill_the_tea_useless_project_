@@ -1,13 +1,17 @@
 import openai
+import os
 
-# Ensure you set your OpenAI API key as an environment variable or configure it securely
-openai.api_key = "your-openai-api-key"
+# Set up API key from environment variables
+openai.api_key = os.getenv("your_openai_api_key")
 
 def dramatize_text(text, drama_level):
-    prompt = f"Make the following story more dramatic based on the level {drama_level}:\n{text}"
-    response = openai.Completion.create(
-        engine="text-davinci-003",
-        prompt=prompt,
+    messages = [
+        {"role": "system", "content": "You are a creative writer who dramatizes stories."},
+        {"role": "user", "content": f"Make the following story more dramatic based on the level {drama_level}:\n{text}"}
+    ]
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=messages,
         max_tokens=300
     )
-    return response.choices[0].text.strip()
+    return response.choices[0].message['content'].strip()
