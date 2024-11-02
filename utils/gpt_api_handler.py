@@ -1,8 +1,12 @@
 import openai
 import os
 
+<<<<<<< HEAD
 # Set up API key from environment variables
 openai.api_key = os.getenv("your_openai_api_key")
+=======
+openai.api_key = os.getenv('OPENAI_API_KEY')
+>>>>>>> 0d76a77bbe6c40bded660cbead1c0d3a027768c6
 
 def dramatize_text(text, drama_level):
     messages = [

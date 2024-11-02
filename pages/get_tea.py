@@ -48,7 +48,12 @@ def main():
 
     # Refresh if a category is selected
     if selected_category:
+<<<<<<< HEAD
         st.experimental_rerun()
+=======
+        st.session_state.page = "get_tea"
+        st.rerun()  # Refresh the app to show new content
+>>>>>>> 0d76a77bbe6c40bded660cbead1c0d3a027768c6
 
     # Display stories
     if "selected_category" in st.session_state:
@@ -66,6 +71,10 @@ def main():
                 st.markdown("---")
         else:
             st.write("No stories found for the selected category.")
+
+    if st.button("Back to Home"):
+        st.session_state.page = "home"
+        st.rerun()
 
 if __name__ == "__main__":
     main()
