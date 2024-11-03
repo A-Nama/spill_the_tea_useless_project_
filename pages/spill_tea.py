@@ -8,14 +8,20 @@ def main():
 
     story = st.text_area("Enter your story here:", placeholder="Type your tea...")
     tags = st.text_input("Tags (comma-separated)", placeholder="e.g., work, love, friends")
-    drama_level = st.slider("Drama Level", min_value=1, max_value=10, value=5, format="%d")
+    drama_level = st.slider("Drama Level", min_value=1, max_value=10, value=5)
 
     if st.button("Teaify!"):
         if story.strip():
             dramatized_story = dramatize_text(story, drama_level)
-            save_tea_to_db(dramatized_story, tags.split(",") if tags else [])
-            st.success("Your tea has been added with extra spice!")
-            st.write(f"**Dramatized Story:**\n{dramatized_story}")
+            # Display the dramatized story before saving it
+            st.write(f"**Dramatized Story Preview:**\n{dramatized_story}")
+            save_confirmation = st.button("Save this Tea!")
+
+            if save_confirmation:
+                save_tea_to_db(dramatized_story, tags.split(",") if tags else [], drama_level)
+                st.success("Your tea has been added with extra spice!")
+            else:
+                st.info("Feel free to make changes to your story or adjust the drama level.")
         else:
             st.error("Please write a story before Teaifying!")
 

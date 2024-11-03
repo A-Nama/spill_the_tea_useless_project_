@@ -1,38 +1,34 @@
 <img width="1280" alt="readme-banner" src="https://github.com/user-attachments/assets/35332e92-44cb-425b-9dff-27bcf1023c6c">
 
-# [Project Name] 🎯
+# [Spill the tea ☕] 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: [Delulu]
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Team Lead: [Anjana Sankar] - [Department of Computer Science, Cusat]
+- Member 2: [Aisha Nama] - [Department of Computer Science, Cusat]
+- Member 3: [Majida Nasrin] - [Department of Computer Science, Cusat]
 
 ### Project Description
-[2-3 lines about what your project does]
+[Spill the Tea is like Mean Girls meets Bridgerton! Share your juiciest drama anonymously, choose the level of flair, and watch as we turn it into a captivating tale. Plus, you can dive into the best anonymous dramas from others—because who doesn’t love a little juicy gossip?]
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+[We’re solving the age-old dilemma of not having a place to air your drama without the fear of judgment! Why bottle up your juicy stories when you can spill them anonymously? Think of us as your drama therapist but with a twist of fun and no awkward conversations]
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+[We're solving it by creating a platform where you can unleash your inner storyteller! With 'Spill the Tea,' you simply hop on, share your drama from a third-person perspective—no names, no shame—and choose how dramatic you want it to be. We take that and turn it into a dramatized masterpiece! Plus, you get to read all the deliciously anonymous teas from others. It's like a drama-filled playground where everyone can enjoy the thrill of gossip without any consequences!]
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- [Python]
+- [Stream lit, MongoDB]
+- [Requests, Google generative AI]
+- [Git]
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
 
 ### Implementation
 For Software:
@@ -59,24 +55,6 @@ For Software:
 ![Workflow](Add your workflow/architecture diagram here)
 *Add caption explaining your workflow*
 
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
 
 ### Project Demo
 # Video
@@ -87,9 +65,9 @@ For Hardware:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- [Anjana sankar]: [API integration and git control]
+- [Aisha Nama]: [database and planning]
+- [Majida Nasrin]: [UI design]
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 

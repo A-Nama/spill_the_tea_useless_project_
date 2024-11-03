@@ -6,6 +6,7 @@ def main():
     st.write("Browse the latest drama-filled stories!")
 
     st.markdown(
+<<<<<<< HEAD
     """
     <style>
     .stApp {
@@ -20,6 +21,24 @@ def main():
     """,
     unsafe_allow_html=True
 )
+=======
+        """
+        <style>
+        .main {
+            background-image: url('https://i.imgur.com/kuHrL6K.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        </style>
+        """, unsafe_allow_html=True
+    )
+>>>>>>> fc5e98017165040de071cdf75c8fb90845b14f62
 
     # Define the tea categories and corresponding images
     tea_categories = {
@@ -27,35 +46,38 @@ def main():
         "University": "https://i.imgur.com/ZToGmJI.png",
         "Love": "https://i.imgur.com/gk2WyIk.png",
         "Friends": "https://i.imgur.com/WL3nsM4.png",
-        "Others": "https://i.imgur.com/ftDq9hg.png",
         "Exes": "https://i.imgur.com/9Cc0Qmq.png",
         "Family": "https://i.imgur.com/aMQeD57.png",
+        "Others": "https://i.imgur.com/ftDq9hg.png",
     }
 
     # Display buttons for each tea category
     selected_category = None
+    category_list = list(tea_categories.items())
 
-    col1, col2, col3 = st.columns(3)  # Creating three columns for layout
+    # Create rows of 3 columns each
+    for i in range(0, len(category_list), 3):
+        cols = st.columns(3)
+        for j, col in enumerate(cols):
+            if i + j < len(category_list):  # Check to avoid index out of range
+                category, img_url = category_list[i + j]
+                with col:
+                    st.image(img_url, width=100)  # Displaying the image
+                    if st.button(category):
+                        selected_category = category
+                        st.session_state.selected_category = selected_category
 
-    # Creating buttons for each category
-    for category, img_url in tea_categories.items():
-        with st.container():
-            st.image(img_url, width=100)  # Displaying the image
-            if st.button(category):
-                selected_category = category  # Store the selected category
-                st.session_state.selected_category = selected_category  # Save selected category in session state
-
-    # If a category is selected, clear previous content and fetch stories
+    # Refresh if a category is selected
     if selected_category:
         st.session_state.page = "get_tea"
         st.rerun()  # Refresh the app to show new content
 
-    # Display the selected category stories
+    # Display stories
     if "selected_category" in st.session_state:
         selected_category = st.session_state.selected_category
         st.write(f"You selected: **{selected_category}**")
         
-        stories = get_tea_from_db(selected_category.lower())  # Fetch stories with the selected tag
+        stories = get_tea_from_db(selected_category.lower())
 
         if stories:
             for story in stories:
@@ -63,7 +85,7 @@ def main():
                 st.markdown(f"*Tags*: {', '.join(story['tags'])}")
                 st.markdown(f"*Drama Level*: {story.get('drama_level', 'N/A')}")
                 st.markdown(f"*Posted on*: {story['timestamp'].strftime('%Y-%m-%d %H:%M:%S')}")
-                st.markdown("---")  # Separator between stories
+                st.markdown("---")
         else:
             st.write("No stories found for the selected category.")
 
