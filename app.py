@@ -1,19 +1,23 @@
 import streamlit as st
+import openai
+
+
+openai.api_key = "your_openai_api_key"
 
 def show_home():
-    # Add custom CSS for button alignment
+    
     st.markdown("""
         <style>
         .button-container {
             display: flex;
             justify-content: center;
             margin: 40px 0;
-            padding-top: 50px;  /* Adjust this to control vertical position */
+            padding-top: 50px;  
         }
         </style>
     """, unsafe_allow_html=True)
 
-    # Create a container for the buttons with alignment
+    
     st.markdown('<div class="button-container">', unsafe_allow_html=True)
     col1, spacer, col2 = st.columns([1, 4, 1])
 
@@ -29,11 +33,11 @@ def show_home():
 
 
 def main():
-    # Initialize session state for page navigation
+    
     if 'page' not in st.session_state:
         st.session_state.page = "home"
 
-    # Background image style
+    
     st.markdown(
         """
         <style>
@@ -49,7 +53,7 @@ def main():
         unsafe_allow_html=True
     )
 
-    # Conditional rendering based on page state
+    
     if st.session_state.page == "home":
         show_home()
     elif st.session_state.page == "spill_tea":
