@@ -1,11 +1,5 @@
 streamlit
 pymongo
-<<<<<<< HEAD
-openai
-requests
-dotenv
-=======
 google-generativeai
 requests
 python-dotenv
->>>>>>> fd47219269382a3f97f0db54b595c6d76d208709
