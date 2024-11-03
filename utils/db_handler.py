@@ -1,17 +1,26 @@
 import pymongo
+import os
+from datetime import datetime
+from dotenv import load_dotenv
+
+load_dotenv()
+MONGO_URI = os.getenv("MONGO_URI")
 
 # Connect to MongoDB
-client = pymongo.MongoClient("mongodb+srv://aishanama2015:<pdgWIWRmIehfwAb7>@teacluster0.k0k6a.mongodb.net/?retryWrites=true&w=majority&appName=TeaCluster0")
-db = client['spill_the_tea_db']
-collection = db['tea_stories']
+try:
+    client = pymongo.MongoClient(MONGO_URI)
+    db = client['spill_the_tea_db']
+    collection = db['tea_stories']
+    print("Connected to MongoDB successfully.")
+except pymongo.errors.ConnectionError as e:
+    print(f"Failed to connect to MongoDB: {e}")
 
 def save_tea_to_db(story, tags, drama_level):
-    # Create a document with all necessary fields
     document = {
         "text": story,
-        "tags": tags,  # Store tags as a list
-        "drama_level": drama_level,  # Add drama level
-        "timestamp": datetime.utcnow()  # Add timestamp
+        "tags": tags,
+        "drama_level": drama_level,
+        "timestamp": datetime.now(timezone.utc)
     }
     collection.insert_one(document)
 

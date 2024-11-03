@@ -30,23 +30,26 @@ def main():
         "University": "https://i.imgur.com/ZToGmJI.png",
         "Love": "https://i.imgur.com/gk2WyIk.png",
         "Friends": "https://i.imgur.com/WL3nsM4.png",
-        "Others": "https://i.imgur.com/ftDq9hg.png",
         "Exes": "https://i.imgur.com/9Cc0Qmq.png",
         "Family": "https://i.imgur.com/aMQeD57.png",
+        "Others": "https://i.imgur.com/ftDq9hg.png",
     }
 
     # Display buttons for each tea category
     selected_category = None
+    category_list = list(tea_categories.items())
 
-    col1, col2, col3 = st.columns(3)  # Creating three columns for layout
-
-    # Creating buttons for each category
-    for category, img_url in tea_categories.items():
-        with st.container():
-            st.image(img_url, width=100)  # Displaying the image
-            if st.button(category):
-                selected_category = category  # Store the selected category
-                st.session_state.selected_category = selected_category  # Save selected category in session state
+    # Create rows of 3 columns each
+    for i in range(0, len(category_list), 3):
+        cols = st.columns(3)
+        for j, col in enumerate(cols):
+            if i + j < len(category_list):  # Check to avoid index out of range
+                category, img_url = category_list[i + j]
+                with col:
+                    st.image(img_url, width=100)  # Displaying the image
+                    if st.button(category):
+                        selected_category = category
+                        st.session_state.selected_category = selected_category
 
     # If a category is selected, clear previous content and fetch stories
     if selected_category:
