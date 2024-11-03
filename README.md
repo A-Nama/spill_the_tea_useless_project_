@@ -44,33 +44,34 @@ streamlit run app.py
 ### Project Documentation
 For Software:
 
-# Screenshots (Add at least 3)
+# Screenshots 
+![App Screenshot](https://i.imgur.com/iWgKVvo.jpeg)
+*Home page*
+
 ![App Screenshot](https://i.imgur.com/ZU3hAsD.jpeg)
 *Entering tea*
 
 ![App Screenshot](https://i.imgur.com/UiZDLdw.jpeg)
 *Tea made more dramatic*
 
-![App Screenshot](https://i.imgur.com/cr7qWWw.jpeg)
-*Home page*
+
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+![Workflow](https://i.imgur.com/FsbOCJf.png)
 
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
+[Watch the video here](https://drive.google.com/file/d/1F9-4G55_VPvnupCMp8nDAYhDKwKR2Kec/view?usp=sharing)
+
 
 # Additional Demos
 [Add any extra demo materials/links]
 
 ## Team Contributions
 - [Anjana sankar]: [API integration and git control]
-- [Aisha Nama]: [database and planning]
-- [Majida Nasrin]: [UI design]
+- [Aisha Nama]: [Streamlit code and Planning]
+- [Majida Nasrin]: [UI Design]
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
