@@ -1,4 +1,5 @@
 streamlit
 pymongo
-openai
+google-generativeai
 requests
+python-dotenv
