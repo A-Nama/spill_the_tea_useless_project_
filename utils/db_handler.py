@@ -20,9 +20,13 @@ def save_tea_to_db(story, tags, drama_level):
         "text": story,
         "tags": tags,
         "drama_level": drama_level,
-        "timestamp": datetime.now(timezone.utc)
+        "timestamp": datetime.now()
     }
-    collection.insert_one(document)
+    try:
+        result = collection.insert_one(document)
+        print(f"Document inserted with id: {result.inserted_id}")
+    except pymongo.errors.PyMongoError as e:
+        print(f"failed to insert data: {e}")
 
 def get_tea_from_db(search_query=""):
     if search_query:
