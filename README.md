@@ -48,13 +48,14 @@ For Software:
 ![App Screenshot](https://i.imgur.com/iWgKVvo.jpeg)
 *Home page*
 
-![App Screenshot](https://i.imgur.com/ZU3hAsD.jpeg)
+![App Screenshot](https://i.imgur.com/PsNBH04.png)
 *Entering tea*
 
 ![App Screenshot](https://i.imgur.com/UiZDLdw.jpeg)
 *Tea made more dramatic*
 
-
+![App Screenshot](https://i.imgur.com/cOx3WJG.png)
+*Getting type of tea*
 
 # Diagrams
 ![Workflow](https://i.imgur.com/FsbOCJf.png)
