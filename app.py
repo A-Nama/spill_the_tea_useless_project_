@@ -1,46 +1,52 @@
 import streamlit as st
-import openai
-
-# Set your OpenAI API key
-openai.api_key = "your_openai_api_key"  # Replace with your actual API key
 
 def show_home():
-    st.title("☕ Spill the Tea ☕")
-    st.markdown("Choose an option below:")
+    # Add custom CSS for button alignment
+    st.markdown("""
+        <style>
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+            padding-top: 50px;  /* Adjust this to control vertical position */
+        }
+        </style>
+    """, unsafe_allow_html=True)
 
-    col1, col2 = st.columns(2)
+    # Create a container for the buttons with alignment
+    st.markdown('<div class="button-container">', unsafe_allow_html=True)
+    col1, spacer, col2 = st.columns([1, 4, 1])
+
     with col1:
         if st.button("Spill the Tea"):
             st.session_state.page = "spill_tea"
+
     with col2:
         if st.button("Get Some Tea"):
             st.session_state.page = "get_tea"
+
+    st.markdown('</div>', unsafe_allow_html=True)
+
 
 def main():
     # Initialize session state for page navigation
     if 'page' not in st.session_state:
         st.session_state.page = "home"
 
-    # Set page configuration
-    st.set_page_config(page_title="Spill the Tea", page_icon="☕", layout="centered")
-
     # Background image style
     st.markdown(
         """
         <style>
-        .main {
-            background-image: url('https://i.imgur.com/EaHsffn.jpeg');
-            background-size: cover;
+        .stApp {
+            background-image: url("https://i.imgur.com/VWYfvtY.jpeg");
+            background-size: contain;
+            background-position: bottom center;
             background-repeat: no-repeat;
-            height: 100vh;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
+            background-attachment: fixed;
         }
         </style>
-        """, unsafe_allow_html=True
+        """,
+        unsafe_allow_html=True
     )
 
     # Conditional rendering based on page state
