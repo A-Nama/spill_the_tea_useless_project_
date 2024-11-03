@@ -5,24 +5,21 @@ def main():
     st.title("Get Some Tea ☕")
     st.write("Browse the latest drama-filled stories!")
 
-    # Background image style
     st.markdown(
-        """
-        <style>
-        .main {
-            background-image: url('https://i.imgur.com/kuHrL6K.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            height: 100vh; /* Set height to full viewport */
-            width: 100%; /* Set width to full viewport */
-            position: absolute; /* Position the background */
-            top: 0;
-            left: 0;
-            z-index: -1; /* Make sure the background is behind other elements */
-        }
-        </style>
-        """, unsafe_allow_html=True
-    )
+    """
+    <style>
+    .stApp {
+        background-image: url("https://i.imgur.com/fxjOaib.png");
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        padding-top: 1000cm; 
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
     # Define the tea categories and corresponding images
     tea_categories = {
