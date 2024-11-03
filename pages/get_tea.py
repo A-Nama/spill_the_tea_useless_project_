@@ -2,43 +2,29 @@ import streamlit as st
 from utils.db_handler import get_tea_from_db
 
 def main():
-    st.title("Get Some Tea ☕")
-    st.write("Browse the latest drama-filled stories!")
+    
 
     st.markdown(
-<<<<<<< HEAD
     """
     <style>
     .stApp {
         background-image: url("https://i.imgur.com/fxjOaib.png");
         background-size: cover;
-        background-position: center top;
+        background-position: 70px 40px;
         background-repeat: no-repeat;
         background-attachment: fixed;
-        padding-top: 1000cm; 
+        padding-top: 100cm; 
     }
+    .matrix-container {
+            padding-top: 3cm; 
+        }
+        .category-column {
+            margin-bottom: 20px; /* Space between rows */
+        }
     </style>
     """,
     unsafe_allow_html=True
 )
-=======
-        """
-        <style>
-        .main {
-            background-image: url('https://i.imgur.com/kuHrL6K.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            height: 100vh;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-        </style>
-        """, unsafe_allow_html=True
-    )
->>>>>>> fc5e98017165040de071cdf75c8fb90845b14f62
 
     # Define the tea categories and corresponding images
     tea_categories = {
@@ -56,8 +42,8 @@ def main():
     category_list = list(tea_categories.items())
 
     # Create rows of 3 columns each
-    for i in range(0, len(category_list), 3):
-        cols = st.columns(3)
+    for i in range(0, len(category_list), 4):
+        cols = st.columns(4)
         for j, col in enumerate(cols):
             if i + j < len(category_list):  # Check to avoid index out of range
                 category, img_url = category_list[i + j]
@@ -92,6 +78,19 @@ def main():
     if st.button("Back to Home"):
         st.session_state.page = "home"
         st.rerun()
+
+st.markdown(
+    """
+    <style>
+    .stApp {
+        margin-top: 100px; /* This will also push the content down */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
 
 if __name__ == "__main__":
     main()

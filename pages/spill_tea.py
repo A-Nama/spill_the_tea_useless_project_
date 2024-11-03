@@ -2,8 +2,26 @@ import streamlit as st
 from utils.gpt_api_handler import dramatize_text
 from utils.db_handler import save_tea_to_db
 
+st.cache_data.clear()
+
 def main():
-    st.title("Spill the Tea 🍵")
+    st.markdown(
+        """
+        <style>
+        .stApp {
+            background-image: url("https://i.imgur.com/jR03lTH.png");
+            background-size: cover;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh;  /* Set height to viewport height */
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+   
     st.write("Share your story anonymously and let the drama begin!")
 
     story = st.text_area("Enter your story here:", placeholder="Type your tea...")

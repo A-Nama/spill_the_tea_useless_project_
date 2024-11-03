@@ -1,12 +1,5 @@
 import streamlit as st
-<<<<<<< HEAD
-import openai
-
-
-openai.api_key = "your_openai_api_key"
-=======
 from pages import spill_tea, get_tea
->>>>>>> fc5e98017165040de071cdf75c8fb90845b14f62
 
 def show_home():
     
@@ -46,19 +39,11 @@ def main():
         """
         <style>
         .stApp {
-<<<<<<< HEAD
             background-image: url("https://i.imgur.com/VWYfvtY.jpeg");
             background-size: contain;
             background-position: bottom center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-=======
-            background-image: url('https://i.imgur.com/EaHsffn.jpeg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            height: 100vh;
-            width: 100%;
->>>>>>> fc5e98017165040de071cdf75c8fb90845b14f62
         }
         </style>
         """,
