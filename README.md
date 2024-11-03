@@ -33,10 +33,13 @@ For Software:
 ### Implementation
 For Software:
 # Installation
-[commands]
+1. Clone the repository
+2. Create and activate a virtual environment (optional but recommended)
+3. Install dependencies:
+pip install -r requirements.txt
 
 # Run
-[commands]
+streamlit run app.py
 
 ### Project Documentation
 For Software:
