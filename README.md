@@ -67,8 +67,8 @@ streamlit run app.py
 
 ## Team Contributions
 - Anjana sankar: API integration and git control
-- [Aisha Nama]: Streamlit code and Planning
-- [Majida Nasrin]: UI Design
+- Aisha Nama: Streamlit code and Planning
+- Majida Nasrin: UI Design
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
