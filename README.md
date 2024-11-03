@@ -42,7 +42,6 @@ pip install -r requirements.txt
 streamlit run app.py
 
 ### Project Documentation
-For Software:
 
 # Screenshots 
 ![App Screenshot](https://i.imgur.com/iWgKVvo.jpeg)
