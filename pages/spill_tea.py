@@ -13,11 +13,15 @@ def main():
     if st.button("Teaify!"):
         if story.strip():
             dramatized_story = dramatize_text(story, drama_level)
-            save_tea_to_db(dramatized_story, tags.split(","))
+            save_tea_to_db(dramatized_story, tags.split(",") if tags else [])
             st.success("Your tea has been added with extra spice!")
             st.write(f"**Dramatized Story:**\n{dramatized_story}")
         else:
             st.error("Please write a story before Teaifying!")
+
+    if st.button("Back to Home"):
+        st.session_state.page = "home"
+        st.rerun()
 
 if __name__ == "__main__":
     main()
