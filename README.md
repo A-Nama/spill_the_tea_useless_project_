@@ -65,13 +65,10 @@ For Software:
 [Watch the video here](https://drive.google.com/file/d/1F9-4G55_VPvnupCMp8nDAYhDKwKR2Kec/view?usp=sharing)
 
 
-# Additional Demos
-[Add any extra demo materials/links]
-
 ## Team Contributions
-- [Anjana sankar]: [API integration and git control]
-- [Aisha Nama]: [Streamlit code and Planning]
-- [Majida Nasrin]: [UI Design]
+- Anjana sankar: API integration and git control
+- [Aisha Nama]: Streamlit code and Planning
+- [Majida Nasrin]: UI Design
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
