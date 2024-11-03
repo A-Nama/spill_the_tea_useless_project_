@@ -45,14 +45,14 @@ streamlit run app.py
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![App Screenshot](https://i.imgur.com/ZU3hAsD.jpeg)
+*Entering tea*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![App Screenshot](https://i.imgur.com/UiZDLdw.jpeg)
+*Tea made more dramatic*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![App Screenshot](https://i.imgur.com/cr7qWWw.jpeg)
+*Tea made more dramatic*
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
