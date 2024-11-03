@@ -12,7 +12,7 @@ try:
     db = client['spill_the_tea_db']
     collection = db['tea_stories']
     print("Connected to MongoDB successfully.")
-except pymongo.errors.ConnectionError as e:
+except pymongo.errors.ConnectionFailure as e:
     print(f"Failed to connect to MongoDB: {e}")
 
 def save_tea_to_db(story, tags, drama_level):
