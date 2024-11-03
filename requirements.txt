@@ -1,5 +1,5 @@
 streamlit
 pymongo
-openai==0.28.0
+google-generativeai
 requests
 python-dotenv

@@ -48,12 +48,8 @@ def main():
 
     # Refresh if a category is selected
     if selected_category:
-<<<<<<< HEAD
-        st.experimental_rerun()
-=======
         st.session_state.page = "get_tea"
         st.rerun()  # Refresh the app to show new content
->>>>>>> 0d76a77bbe6c40bded660cbead1c0d3a027768c6
 
     # Display stories
     if "selected_category" in st.session_state:

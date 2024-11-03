@@ -13,9 +13,15 @@ def main():
     if st.button("Teaify!"):
         if story.strip():
             dramatized_story = dramatize_text(story, drama_level)
-            save_tea_to_db(dramatized_story, tags.split(",") if tags else [], drama_level)
-            st.success("Your tea has been added with extra spice!")
-            st.write(f"**Dramatized Story:**\n{dramatized_story}")
+            # Display the dramatized story before saving it
+            st.write(f"**Dramatized Story Preview:**\n{dramatized_story}")
+            save_confirmation = st.button("Save this Tea!")
+
+            if save_confirmation:
+                save_tea_to_db(dramatized_story, tags.split(",") if tags else [], drama_level)
+                st.success("Your tea has been added with extra spice!")
+            else:
+                st.info("Feel free to make changes to your story or adjust the drama level.")
         else:
             st.error("Please write a story before Teaifying!")
 
