@@ -2,26 +2,24 @@ import streamlit as st
 from utils.db_handler import get_tea_from_db
 
 def main():
-    st.title("Get Some Tea ☕")
-    st.write("Browse the latest drama-filled stories!")
-
     # Background image style
     st.markdown(
-        """
-        <style>
-        .main {
-            background-image: url('https://i.imgur.com/kuHrL6K.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            height: 100vh;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-        </style>
-        """, unsafe_allow_html=True
+    """
+    <style>
+    .stApp {
+        background-image: url("https://i.imgur.com/fxjOaib.png");
+        background-size: cover;
+        background-position: 70px 40px;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        margin-top: 50px; /* Adjusted padding */
+    }
+    .category-column {
+        margin-bottom: 20px; /* Space between rows */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
     )
 
     # Define the tea categories and corresponding images
@@ -36,7 +34,7 @@ def main():
     }
 
     # Display buttons for each tea category
-    selected_category = None
+    selected_category = st.session_state.get('selected_category', None)
     category_list = list(tea_categories.items())
 
     # Create rows of 3 columns each
@@ -54,7 +52,7 @@ def main():
     # Refresh if a category is selected
     if selected_category:
         st.session_state.page = "get_tea"
-        st.rerun()  # Refresh the app to show new content
+        st.rerun()  # Use rerun for Streamlit
 
     # Display stories
     if "selected_category" in st.session_state:
