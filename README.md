@@ -52,7 +52,7 @@ For Software:
 *Tea made more dramatic*
 
 ![App Screenshot](https://i.imgur.com/cr7qWWw.jpeg)
-*Tea made more dramatic*
+*Home page*
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
